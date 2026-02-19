@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberKing - Premium Saç Tasarım</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">BERATCAN<span>TOĞRAN</span></div>
+        <div class="menu-btn" id="menuBtn">
+            <div class="menu-btn-burger"></div>
+        </div>
+    </header>
+
+    <div class="nav-overlay" id="navOverlay">
+        <nav>
+            <ul>
+                <li><a href="#home" class="overlay-link">Ana Sayfa</a></li>
+                <li><a href="#portfolio" class="overlay-link">Özel Tasarımlar</a></li>
+                <li><a href="#blog" class="overlay-link">Kişisel Blog</a></li>
+                <li><a href="#booking" class="overlay-link btn-book-overlay">Randevu Al</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-content hidden-scroll">
+            <h1>Sanatı Başında Taşı</h1>
+            <p>Sıradanlığı reddedenler için vizyoner saç ve sakal tasarımları.</p>
+            <a href="#booking" class="btn-primary">Randevu Takvimini Gör</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="gallery-section">
+        <div class="gallery-header hidden-scroll">
+            <h2>İmza Tasarımlarımız</h2>
+            <p>Modern erkeğin kendi dünyasını yansıttığı özel koleksiyon.</p>
+        </div>
+        <div class="gallery-grid hidden-scroll">
+            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Kesim 1" class="gallery-img"></div>
+            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Kesim 2" class="gallery-img"></div>
+            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1512496015851-a1c8411bc4c8?auto=format&fit=crop&w=600&q=80" alt="Kesim 3" class="gallery-img"></div>
+            <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80" alt="Kesim 4" class="gallery-img"></div>
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+
+    <section id="blog" class="blog-section">
+        <div class="blog-header hidden-scroll">
+            <h2>Usta'nın Kaleminden</h2>
+            <p>Sektördeki son trendler, yenilikçi bakım sırları ve stil tüyoları.</p>
+        </div>
+        <div class="blog-grid hidden-scroll">
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=500&q=80" alt="Blog 1" class="blog-img">
+                <div class="blog-content">
+                    <h3>Yüz Hatlarına Göre Sakal Tasarımı</h3>
+                    <p>Hangi yüz tipine hangi sakal modelinin uyduğunu, keskin hatları nasıl ortaya çıkaracağınızı anlatıyorum...</p>
+                    <a href="#" class="read-more">Okumaya Devam Et <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80" alt="Blog 2" class="blog-img">
+                <div class="blog-content">
+                    <h3>2026'nın İleri Görüşlü Saç Trendleri</h3>
+                    <p>Klasik kesimleri geride bırakıyoruz. Dokulu ve katlı kesimlerle kendi karakterinizi nasıl yansıtırsınız?</p>
+                    <a href="#" class="read-more">Okumaya Devam Et <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+        <h2 class="hidden-scroll">Akıllı Randevu Yönetimi</h2>
+        <div class="booking-container hidden-scroll">
+            <form id="appointmentForm">
+                <div class="input-group">
+                    <label><i class="fas fa-user"></i> Müşteri Adı</label>
+                    <input type="text" id="name" required placeholder="Adınız Soyadınız">
+                </div>
+                <div class="input-group">
+                    <label><i class="fas fa-cut"></i> Hizmet Tipi</label>
+                    <select id="service">
+                        <option value="sac">Saç</option>
+                        <option value="sac-sakal">Saç + Sakal</option>
+                        <option value="sakal">Sakal</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label><i class="fas fa-calendar-alt"></i> Takvim</label>
+                    <input type="text" id="datetime" required placeholder="Tarih ve saat seçin">
+                </div>
+                <button type="submit" class="btn-primary btn-full">Randevu Talebi Oluştur</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/tr.js"></script>
+    
+    <script src="app.js" defer></script>
+    <script src="gallery.js" defer></script>
+    <script src="booking.js" defer></script>
+</body>
+</html>
